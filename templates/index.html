@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headline Fetcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        button {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .headline-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form method="GET">
+        <h1>Headline Fetcher</h1>
+        <input type="text" name="url" placeholder="Enter URL..." required>
+        <button type="submit">Submit</button>
+    </form><br>
+
+    <div class="headline-container">
+        {% if headlines %}
+            {% if headlines|length > 0 %}
+                <ul>
+                {% for headline in headlines %}
+                    <li>{{ loop.index }}. {{ headline }}</li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No headlines found.</p>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
