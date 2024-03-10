@@ -10,4 +10,4 @@ In this simple web scraper project, we focus on extracting only the headlines fr
 5) Flask
 
 
-### Tip = This webscraper is efficiently fetch headlines only from The Indian Express website.
+##### Tip : This webscraper is efficiently fetch headlines only from The Indian Express website. For another news website you'll need to adjust the code accordingly.
